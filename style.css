@@ -1,0 +1,399 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(royal-image.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+ul li{
+    list-style: none;
+    padding: 20px;
+}
+ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+}
+ul li a:hover{
+    background-color: orangered;
+    transition: 0.3s ease-in-out; 
+}
+.bike-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.card{
+    width: 320px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ;
+    padding: 20px;
+}
+.card:hover{
+    transform: translateY(-5px);
+}
+.card img{
+    width: 100%;
+    border-radius: 10px;
+}
+.card h2{
+    margin: 15px 0 10px;
+    font-size: 22px;
+    color: #000;
+}
+.card p{
+    color: #555;
+    font-size: 15px;
+}
+.price{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+.stars{
+    color: #ffd700;
+    font-size: 20px;
+    margin: 5px 0;
+}
+.btn{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.btn:hover{
+    background-color: #0056b3;
+} */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base body style for all pages, removes the aggressive centering */
+body {
+    background-image: url(royal-image.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    min-height: 100vh; /* Use min-height to ensure background covers all content */
+}
+
+/* Specific body style for the homepage (index.html) to keep it centered */
+.homepage-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Nav Container styling for visibility */
+.container {
+    display: flex;
+    justify-content: center; /* Adjusted to space the logo and list */
+    align-items: center;
+    font-weight: bolder;
+    background-color: rgba(0, 0, 0, 0.7); /* Added background for visibility */
+    padding: 0 50px; /* Added padding */
+    width: 100%;
+    position: fixed; /* Fixed position for better navigation experience */
+    top: 0;
+    z-index: 1000;
+}
+.logo {
+    padding: 10px 0;
+}
+.logo img {
+    height: 50px; /* Example size for the logo */
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+ul li {
+    list-style: none;
+    padding: 20px 0; /* Adjusted padding */
+}
+ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 20px 10px; /* Adjusted padding for better hover area */
+}
+ul li a:hover {
+    background-color: orangered;
+    transition: 0.3s ease-in-out;
+}
+
+.bike-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 100px 20px 20px; /* Added top padding to clear fixed header */
+    margin-top: 50px; /* Added margin-top to separate from fixed header */
+}
+.card {
+    width: 320px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+    padding: 20px;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 200px; /* Set a fixed height for uniform cards */
+    object-fit: cover; /* Ensures image covers the space without distortion */
+}
+.card h2 {
+    margin: 15px 0 10px;
+    font-size: 22px;
+    color: #000;
+}
+.card p {
+    color: #555;
+    font-size: 15px;
+}
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+.stars {
+    color: #ffd700;
+    font-size: 20px;
+    margin: 5px 0;
+}
+.btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+@keyframes ride {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Existing keyframes (fadeInUp, slowZoom) ... */
+/* --------------------------------- END ANIMATION KEYFRAMES --------------------------------- */
+
+/* --- FOOTER TICKET STYLES (New Section) --- */
+.bike-ticker-wrapper {
+    width: 100%;
+    overflow: hidden; 
+    background-color: #1a1a1a; 
+    padding: 10px 0;
+    border-top: 1px solid #3c434b;
+    border-bottom: 1px solid #3c434b;
+    position: relative;
+    height: 100px; /* Space for the bike to ride */
+  
+}
+
+.bike-ticker-content {
+    white-space: nowrap; /* Forces all content onto a single line */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Apply the animation */
+    animation: ride 20s linear infinite;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.bike-ticker-image {
+    height: 80px; /* Size the bike */
+    margin: 0 50px; /* Space between bike repetitions */
+    object-fit: contain;
+}
+
+.bike-ticker-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: orangered; /* Highlight color */
+    text-transform: uppercase;
+    margin-right: 50px; }
+
+/* Transparent overlay so main background stays visible */
+.contact-section {
+  padding: 60px 10%;
+  background: rgba(0, 0, 0, 0.6); /* see-through dark overlay */
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Left info */
+.contact-info {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 40px;
+}
+
+.contact-info h2 {
+  color: #ffd400;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.info-box {
+  text-align: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius:}
+/* Style only inputs, textarea, and button */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.85);
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+/* Highlight on focus */
+input:focus,
+textarea:focus {
+  border-color: #ffd400;
+  box-shadow: 0 0 6px #ffd40080;
+  outline: none;
+  background: #fff;
+}
+
+/* Submit button */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffd400;
+  color: #111;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #e6c200;
+}
+.about-section {
+      padding: 80px 10%;
+      background: rgba(0, 0, 0, 0.6); /* transparent overlay */
+      color: #fff;
+      text-align: center;
+      backdrop-filter: blur(6px);
+    }
+
+    .about-section h1 {
+      font-size: 40px;
+      color: #ffd400;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .about-section p {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #f0f0f0;
+    }
+
+    .about-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 50px;
+      gap: 25px;
+    }
+
+    .about-box {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 25px;
+      width: 260px;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .about-box:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .about-box h3 {
+      color: #ffd400;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        padding: 50px 20px;
+      }
+      .about-box {
+        width: 100%;
+      }
+    }
